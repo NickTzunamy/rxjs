@@ -17,19 +17,10 @@ function renderMovies(movies: any) {
   });
 }
 
-let subscription = 
-  load("movies.json")
-    .subscribe(renderMovies, 
-              e => console.log(`error: ${e}`),
-              () => console.log("complete!"));
-
-console.log(subscription);
-subscription.unsubscribe();
-
-/* loadWithFetch("moviess.json")
+loadWithFetch("moviess.json")
     .subscribe(renderMovies,
               e => console.log(`error: ${e}`),
-              () => console.log("complete!")); */
+              () => console.log("complete!"));
 
 // 3.subscibe to event 4.recive click event "e" and invoke method load
 click.flatMap((e: any) => loadWithFetch("movies.json"))
@@ -38,3 +29,6 @@ click.flatMap((e: any) => loadWithFetch("movies.json"))
       (e: any) => console.log(`error: ${e}`),
       () => console.log("complete")
 );
+
+
+/// in loader.ts

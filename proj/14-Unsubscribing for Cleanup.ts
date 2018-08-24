@@ -20,7 +20,7 @@ function renderMovies(movies: any) {
 let subscription = 
   load("movies.json")
     .subscribe(renderMovies, 
-              e => console.log(`error: ${e}`),
+              (e: any) => console.log(`error: ${e}`),
               () => console.log("complete!"));
 
 console.log(subscription);
